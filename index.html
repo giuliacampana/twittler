@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    <link rel="stylesheet" href="twittler.css" type="text/css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <title>Twittler</title>
   </head>
-  <body>
-    <script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <body id="override">
+      <div class="title">Twittler</div>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+      <div class="credit">
+        <a target="_blank" href="http://github.com/giuliacampana">giuliacampana</a>
+      </div>
 
-      });
+      <div class="buttons">
+        <button id="back" style="display:none">back to feed</button>
+      </div>
 
-    </script>
-  </body>
+      <div class="container">
+        <ul class="tweets list-group">
+          <li class="list-group-item"></li>
+        </ul>
+      </div>
+
+
+      <script src="jquery.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="data_generator.js"></script>
+      <script type="text/javascript" src="twittler.js"></script>
+
+    </body>
 </html>
